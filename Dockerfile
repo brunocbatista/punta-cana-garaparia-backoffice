@@ -1,3 +1,4 @@
+FROM node:14.19.3-alpine as node
 FROM php:8.1.1-fpm
 
 # Arguments
@@ -32,6 +33,10 @@ RUN mkdir -p /home/$user/.composer && \
 RUN pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
+
+# Install nodejs
+RUN curl -sL https://deb.nodesource.com/setup_16.x | bash -
+RUN apt-get install -y nodejs
 
 # Set working directory
 WORKDIR /var/www
