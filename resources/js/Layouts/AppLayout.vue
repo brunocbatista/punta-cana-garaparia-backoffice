@@ -81,23 +81,23 @@ const logout = () => {
                                             <!-- Team Management -->
                                             <template v-if="$page.props.jetstream.hasTeamFeatures">
                                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                                    Manage Team
+                                                    Gerenciar equipe
                                                 </div>
 
                                                 <!-- Team Settings -->
                                                 <JetDropdownLink :href="route('teams.show', $page.props.user.current_team)">
-                                                    Team Settings
+                                                    Configurações da equipe
                                                 </JetDropdownLink>
 
                                                 <JetDropdownLink v-if="$page.props.jetstream.canCreateTeams" :href="route('teams.create')">
-                                                    Create New Team
+                                                    Criar nova equipe
                                                 </JetDropdownLink>
 
                                                 <div class="border-t border-gray-100" />
 
                                                 <!-- Team Switcher -->
                                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                                    Switch Teams
+                                                    Alternar equipes
                                                 </div>
 
                                                 <template v-for="team in $page.props.user.all_teams" :key="team.id">
@@ -152,11 +152,11 @@ const logout = () => {
                                     <template #content>
                                         <!-- Account Management -->
                                         <div class="block px-4 py-2 text-xs text-gray-400">
-                                            Manage Account
+                                            Gerenciar Conta
                                         </div>
 
                                         <JetDropdownLink :href="route('profile.show')">
-                                            Profile
+                                            Perfil
                                         </JetDropdownLink>
 
                                         <JetDropdownLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')">
@@ -168,7 +168,7 @@ const logout = () => {
                                         <!-- Authentication -->
                                         <form @submit.prevent="logout">
                                             <JetDropdownLink as="button">
-                                                Log Out
+                                                Sair
                                             </JetDropdownLink>
                                         </form>
                                     </template>
@@ -232,7 +232,7 @@ const logout = () => {
 
                         <div class="mt-3 space-y-1">
                             <JetResponsiveNavLink :href="route('profile.show')" :active="route().current('profile.show')">
-                                Profile
+                                Perfil
                             </JetResponsiveNavLink>
 
                             <JetResponsiveNavLink v-if="$page.props.jetstream.hasApiFeatures" :href="route('api-tokens.index')" :active="route().current('api-tokens.index')">
@@ -242,7 +242,7 @@ const logout = () => {
                             <!-- Authentication -->
                             <form method="POST" @submit.prevent="logout">
                                 <JetResponsiveNavLink as="button">
-                                    Log Out
+                                    Sair
                                 </JetResponsiveNavLink>
                             </form>
 
@@ -251,23 +251,23 @@ const logout = () => {
                                 <div class="border-t border-gray-200" />
 
                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                    Manage Team
+                                    Gerenciar equipe
                                 </div>
 
                                 <!-- Team Settings -->
                                 <JetResponsiveNavLink :href="route('teams.show', $page.props.user.current_team)" :active="route().current('teams.show')">
-                                    Team Settings
+                                    Configurações da equipe
                                 </JetResponsiveNavLink>
 
                                 <JetResponsiveNavLink v-if="$page.props.jetstream.canCreateTeams" :href="route('teams.create')" :active="route().current('teams.create')">
-                                    Create New Team
+                                    Criar nova equipe
                                 </JetResponsiveNavLink>
 
                                 <div class="border-t border-gray-200" />
 
                                 <!-- Team Switcher -->
                                 <div class="block px-4 py-2 text-xs text-gray-400">
-                                    Switch Teams
+                                    Alternar equipes
                                 </div>
 
                                 <template v-for="team in $page.props.user.all_teams" :key="team.id">
