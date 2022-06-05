@@ -38,7 +38,7 @@ const submit = () => {
 </script>
 
 <template>
-    <Head title="Two-factor Confirmation" />
+    <Head title="Confirmação de dois fatores" />
 
     <JetAuthenticationCard>
         <template #logo>
